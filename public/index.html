@@ -4,48 +4,116 @@
     <head>
         <title>Starting Environment</title>
         <script src="js/aframe-v0.8.2.min.js"></script>
+
+        <script src="/js/play-drums.js"></script>
     </head>
     <body>
         <a-scene>
 
             <a-assets>
-                <img id="skymap" src="assets/textures/starfield.png" />
+                <img id="skymap" src="assets/textures/skybox.png" />
                 <img id="cow_mat" src="assets/textures/Cow.png" />
+
+                <!--<audio id="drum-loop" crossorigin="anonymous" src="/assets/audio/drum-loop.wav" ></audio>-->
+                <a-asset-item crossorigin="anonymous" id="play-drum-loop" src="/assets/audio/drum-loop.ogg" response-type="arraybuffer"></a-asset-item>
             </a-assets>
 
             <a-assets>
                 <a-asset-item id="cow" src="assets/models/Cow.obj"></a-asset-item>
+                <a-asset-item id="stadium" src="assets/models/stadium.obj"></a-asset-item>
+                <a-asset-item id="stage" src="assets/models/stage.obj"></a-asset-item>
+                <a-asset-item id="rafter" src="assets/models/rafter.obj"></a-asset-item>
             </a-assets>
 
-            <a-entity   obj-model="obj: #cow"
-                        material="src: assets/textures/Cow.png"
-                        position="3 0 -1"
-                        rotation="0 220 0">
-            </a-entity>
+            <!-- sound entities we will query and play in components -->
+            <a-entity id="playDrumLoop" sound="src: #play-drum-loop; loop: true;"></a-entity>
             
-            <a-entity position="0 0 5">
-                <a-camera></a-camera>
+            <a-entity id="stadium" obj-model="obj:assets/models/stadium.obj" position="0 -16.23008 0" rotation="" scale="3 3 3" shadow="">
             </a-entity>
 
-            <a-light type="point" color="yellow" position="10 5 0"></a-light>
-            <a-light type="point" color="red" position="0 5 10"></a-light>
-            
-            <a-entity   id="box"
-                        position="-1 0.5 -3"
-                        rotation="0 45 0"
-                        scale="1 1 1"
-                        geometry="primitive: box; width: 1, height: 1; depth: 1"
-                        shadow="cast: true; receive: true"
-                        material="color: #EF2D5E; sphericalEnvMap: #skymap; roughness: 0.5; metalness: 0.0">
+            <a-entity id="rafter1" obj-model="obj:assets/models/rafter.obj" position="48.14777 31.58885 0" scale="2.26 2 2" shadow="" rotation="0 90 0">
+            </a-entity>
+
+            <a-entity id="rafter2" obj-model="obj:assets/models/rafter.obj" position="-45.50633 31.58885 0" scale="2.26 2 2" shadow="" rotation="0 90 0">
+            </a-entity>
+
+            <a-entity id="rafter3" obj-model="obj:assets/models/rafter.obj" position="-34.01987 31.58885 0" scale="2.26 2 2" shadow="" rotation="0 90 0">
+            </a-entity>
+
+            <a-entity id="rafter4" obj-model="obj:assets/models/rafter.obj" position="34.99791 31.58885 0" scale="2.26 2 2" shadow="" rotation="0 90 0">
+            </a-entity>
+
+            <a-entity
+                id="stage"
+                obj-model="obj:assets/models/stage.obj" shadow="">
+            </a-entity>
+
+            <a-entity geometry="primitive:plane" scale="200 200 1" rotation="-90 90 0" material="color:#00004f;metalness:1;emissive:#00000d" shadow=""></a-entity>
+
+            <a-entity position="-3 0 5.0">
+                <a-entity position="0 7.3 0" geometry="" scale="1 1.88 1" shadow="" material="color:#000040"></a-entity>
+                <a-entity play-drums position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:red"></a-entity>
             </a-entity>
             
-            <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#EF2D5E" shadow></a-box>
-            <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-            <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-            <a-plane position="0 0 -4" width="4" height="4" rotation="-90 0 0" color="#7BC8A4" shadow></a-plane>
-            <a-sky color="#ECECEC"></a-sky> -->
+            <a-entity position="-1.5 0 5.0">
+                <a-entity position="0 7.3 0" geometry="" scale="1 1.88 1" shadow="" material="color:#000040"></a-entity>
+                <a-entity play-drums position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:red"></a-entity>
+            </a-entity>
+
+            <a-entity position="0 0 5.0">
+                <a-entity position="0 7.3 0" geometry="" scale="1 1.88 1" shadow="" material="color:#000040"></a-entity>
+                <a-entity play-drums position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:red"></a-entity>
+            </a-entity>
+            
+            <a-entity position="2 0 5.0">
+                <a-entity position="0 7.3 0" geometry="" scale="2 1.88 1" shadow="" material="color:#000040"></a-entity>
+                <a-entity play-drums position="-0.6 8.2 0" geometry="" scale="0.1 0.3 0.5" shadow="" material="color:white"></a-entity>
+            </a-entity>
+
+            <!--    CAMERA    -->
+
+            <a-entity id="camera" position="0 5.84567 10">
+                <a-camera camera="" cursor="rayOrigin: mouse" position="0 3.3 -4" rotation="4.583662361046577 -306.8761950720692 0" look-controls="" wasd-controls="acceleration: 100" data-aframe-inspector-original-camera=""></a-camera>
+            </a-entity>
+
+            <!--    LIGHTS    -->
+
+            <a-entity id="mainLight" light="type:point;intensity:0.49;decay:0.9;distance:5.95"></a-entity>
+
+            
+
+            <a-light
+                 
+                type="point" 
+                color="#0a0037" 
+                position="0 230 0"
+                intensity="1"
+                light="castShadow:true;shadowMapHeight:2048;shadowMapWidth:2048">
+            </a-light>            
+        
+
+            <a-light 
+                id="spotlight1"
+                type="spot" 
+                color="#ff0000" 
+                angle="3"
+                position="9 58 84"
+                rotation="-32 5 0.5" 
+                intensity="0.3"
+                scale="" 
+                light="castShadow:true;shadowMapHeight:2048;shadowMapWidth:2048">
+            </a-light>    
+            
+            <a-light id="spotlight2" type="spot" color="#green" angle="3" position="-48.48149 58 80.57806" rotation="-29.03463626825447 -31.374022945773614 -1.6432429564352011" intensity="0.3" scale="" light="color:#ffff80;castShadow:true;shadowMapHeight:2048;shadowMapWidth:2048">
+            </a-light>
+            
+
+            <!--    ROOM ENTITIES     -->
+
+            <a-entity id="ground" geometry="primitive:plane" scale="200 200 1" rotation="-90 90 0" material="color:#00004f;metalness:1;emissive:#00000d" shadow=""></a-entity>
 
             <a-entity   id="sky"
+                        rotation="0 0 90"
                         geometry="primitive: sphere; radius: 500"
                         material="shader: flat; src: #skymap; side: back">
             </a-entity>
