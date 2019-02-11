@@ -16,6 +16,7 @@ AFRAME.registerComponent('play-guitar', {
         let light = document.querySelector('#spotlight1');
         let lightBeam = document.querySelector('#spotlight1Beam');
         let scene = document.querySelector('a-scene');
+        var myAudio = document.getElementById('play-guitar-loop');
         
         if(Context_AF.el.loadGuitarist  == false)
         {
@@ -27,13 +28,17 @@ AFRAME.registerComponent('play-guitar', {
             scene.appendChild(guitarist);  
             Context_AF.el.loadGuitarist = true;
             console.log("created");
+
+            
         }
 
         if( Context_AF.el.isDown == 0 )
         {
             light.setAttribute('light', 'intensity', '0.7');
             lightBeam.setAttribute('material', 'visible', 'true');
-            Context_AF.soundElem.components['sound'].playSound();
+            
+            myAudio.play();
+            //Context_AF.soundElem.components['sound'].playSound();
             Context_AF.el.isDown = 1;
             Context_AF.el.object3D.position.set(0, 8.13, 0);
             Context_AF.el.setAttribute('material', {color: 'green'});
@@ -42,7 +47,8 @@ AFRAME.registerComponent('play-guitar', {
         else{
             light.setAttribute('light', 'intensity', '0.0');
             lightBeam.setAttribute('material', 'visible', 'false');
-            Context_AF.soundElem.components['sound'].stopSound(); 
+            myAudio.pause();
+            //Context_AF.soundElem.components['sound'].stopSound(); 
             Context_AF.el.isDown = 0;
             Context_AF.el.object3D.position.set(Context_AF.el.ogPosition.x, Context_AF.el.ogPosition.y, Context_AF.el.ogPosition.z);
             Context_AF.el.setAttribute('material', {color: 'red'});
