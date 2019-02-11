@@ -37,8 +37,8 @@ AFRAME.registerComponent('play-guitar', {
             light.setAttribute('light', 'intensity', '0.7');
             lightBeam.setAttribute('material', 'visible', 'true');
             
-            myAudio.play();
-            //Context_AF.soundElem.components['sound'].playSound();
+            //myAudio.play();
+            Context_AF.soundElem.components['sound'].playSound();
             Context_AF.el.isDown = 1;
             Context_AF.el.object3D.position.set(0, 8.13, 0);
             Context_AF.el.setAttribute('material', {color: 'green'});
@@ -47,8 +47,8 @@ AFRAME.registerComponent('play-guitar', {
         else{
             light.setAttribute('light', 'intensity', '0.0');
             lightBeam.setAttribute('material', 'visible', 'false');
-            myAudio.pause();
-            //Context_AF.soundElem.components['sound'].stopSound(); 
+            //myAudio.pause();
+            Context_AF.soundElem.components['sound'].stopSound(); 
             Context_AF.el.isDown = 0;
             Context_AF.el.object3D.position.set(Context_AF.el.ogPosition.x, Context_AF.el.ogPosition.y, Context_AF.el.ogPosition.z);
             Context_AF.el.setAttribute('material', {color: 'red'});

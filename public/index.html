@@ -8,6 +8,7 @@
         <script src="/js/play-drums.js"></script>
         <script src="/js/play-piano.js"></script>
         <script src="/js/play-guitar.js"></script>
+\
     </head>
     <body>
         <a-scene >
@@ -56,10 +57,6 @@
                 <a-entity play-drums="" position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:red"></a-entity>
             </a-entity>
             
-            <a-entity id="volumeControl" position="0.83002 0 6.60771" rotation="0 -90 0">
-                <a-entity position="0 7.3 0" geometry="" scale="2 1.88 1" shadow="" material="color:#000040"></a-entity>
-                <a-entity position="-0.6 8.2 0" geometry="" scale="0.1 0.3 0.5" shadow="" material="color:white"></a-entity>
-            </a-entity>
 
             <!--  MUSIC PERFORMERS  
 
@@ -70,7 +67,7 @@
 
             <!--    CAMERA    -->
             <a-entity id="camera" position="-0.19973 5.84567 10.35869">
-                <a-camera camera="" cursor="rayOrigin:mouse" position="-0.03489791849969297 3.3 -3.8346959559389853" rotation="-15.240677350479908 -14.209353319244403 0" look-controls="" wasd-controls="acceleration:100" data-aframe-inspector-original-camera="" raycaster="useWorldCoordinates:true;origin:-0.030410441560483246 9.145669999999999 6.147581873763059;direction:0.12617277419239273 -0.2720004049136409 -0.9539896282347156"></a-camera>
+                <a-camera camera="" id="cursor" cursor="rayOrigin:mouse" position="-0.03489791849969297 3.3 -3.8346959559389853" rotation="-15.240677350479908 -14.209353319244403 0" look-controls="" wasd-controls="acceleration:100" data-aframe-inspector-original-camera="" raycaster="useWorldCoordinates:true;origin:-0.030410441560483246 9.145669999999999 6.147581873763059;direction:0.12617277419239273 -0.2720004049136409 -0.9539896282347156"></a-camera>
             </a-entity>
 
 
@@ -168,329 +165,329 @@
 
             <!--  CROWD  --> <!--i know this is messy but i didnt know how to do it prodedurally :(-->
             <a-entity id="crowdFull">
-                <a-entity id="crowdh1">
-                        <a-entity id="crowd">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                    <a-entity id="crowdh1">
+                            <a-entity id="crowd">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 35 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 70 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 105 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 140 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 175 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
                         </a-entity>
             
-                        <a-entity id="crowd" rotation="0 35 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                        <a-entity id="crowdh2" rotation="0 180 0">
+                            <a-entity id="crowd">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 35 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 70 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 105 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 140 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 175 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
                         </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 70 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 105 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 140 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 175 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-                    </a-entity>
-        
-                    <a-entity id="crowdh2" rotation="0 180 0">
-                        <a-entity id="crowd">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 35 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 70 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 105 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 140 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 175 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-                    </a-entity>
 
-                    <!--  CROWD  --> <!--i know this is messy but i didnt know how to do it prodedurally :(-->
-        <a-entity id="crowdFull" position="2 0 0" scale="1.1 0.5 1.1">
-                <a-entity id="crowdh1">
-                        <a-entity id="crowd">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                        <!--  CROWD  --> <!--i know this is messy but i didnt know how to do it prodedurally :(-->
+            <a-entity id="crowdFull" position="2 0 0" scale="1.1 0.5 1.1">
+                    <a-entity id="crowdh1">
+                            <a-entity id="crowd">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 35 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 70 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 105 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 140 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 175 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
                         </a-entity>
             
-                        <a-entity id="crowd" rotation="0 35 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                        <a-entity id="crowdh2" rotation="0 180 0">
+                            <a-entity id="crowd">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 35 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 70 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 105 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 140 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
+                
+                            <a-entity id="crowd" rotation="0 175 0">
+                                <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
+                                <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
+                                <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                                <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
+                            </a-entity>
                         </a-entity>
             
-                        <a-entity id="crowd" rotation="0 70 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 105 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 140 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 175 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-                    </a-entity>
-        
-                    <a-entity id="crowdh2" rotation="0 180 0">
-                        <a-entity id="crowd">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 35 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 70 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 105 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 140 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-            
-                        <a-entity id="crowd" rotation="0 175 0">
-                            <a-entity position="5 26.09188 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-8.95678 27 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>            
-                            <a-entity position="-5 30.96744 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-15 29.05675 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="0 28.47572 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity> 
-                            <a-entity position="12.86626 24.08367 -72.10558" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.13383 24.75496 -75.95549" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-19.54791 33.57812 -79.32297" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="-27.56823 28.23007 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                            <a-entity position="8.59066 33.08866 -80" geometry="" shadow="cast:false;receive:false" scale="0.2 0.2 0.2"></a-entity>
-                        </a-entity>
-                    </a-entity>
-        
-        </a-entity>
+            </a-entity>
             
             
         </a-scene>
