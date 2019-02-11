@@ -41,26 +41,25 @@
 
             <a-entity geometry="primitive:plane" scale="200 200 1" rotation="-90 90 0" material="color:#00004f;metalness:1;emissive:#00000d" shadow=""></a-entity>
 
-            <a-entity position="-3 0 5.0">
+            <a-entity id="guitarButton" position="-1.4323 0 5">
                 <a-entity position="0 7.3 0" geometry="" scale="1 1.88 1" shadow="" material="color:#000040"></a-entity>
-                <a-entity play-guitar position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:yellow"></a-entity>
+                <a-entity play-guitar="" position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:red"></a-entity>
             </a-entity>
             
-            <a-entity position="-1.5 0 5.0">
+            <a-entity id="pianoButton" position="-0.31348 0 5">
                 <a-entity position="0 7.3 0" geometry="" scale="1 1.88 1" shadow="" material="color:#000040"></a-entity>
-                <a-entity play-piano position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:blue"></a-entity>
+                <a-entity play-piano="" position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:red"></a-entity>
             </a-entity>
 
-            <a-entity position="0 0 5.0">
+            <a-entity id="drumButton" position="0.82032 0 5">
                 <a-entity position="0 7.3 0" geometry="" scale="1 1.88 1" shadow="" material="color:#000040"></a-entity>
-                <a-entity play-drums position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:red"></a-entity>
+                <a-entity play-drums="" position="0 8.2 0" geometry="" scale="0.5 0.3 0.5" shadow="" material="color:red"></a-entity>
             </a-entity>
             
-            <a-entity position="2 0 5.0">
+            <a-entity id="volumeControl" position="0.83002 0 6.60771" rotation="0 -90 0">
                 <a-entity position="0 7.3 0" geometry="" scale="2 1.88 1" shadow="" material="color:#000040"></a-entity>
                 <a-entity position="-0.6 8.2 0" geometry="" scale="0.1 0.3 0.5" shadow="" material="color:white"></a-entity>
             </a-entity>
-
 
             <!--  MUSIC PERFORMERS  
 
@@ -70,8 +69,8 @@
             
 
             <!--    CAMERA    -->
-            <a-entity id="camera" position="0 5.84567 10">
-                <a-camera camera="" cursor="rayOrigin: mouse" position="0 3.3 -4" rotation="4.583662361046577 -306.8761950720692 0" look-controls="" wasd-controls="acceleration: 100" data-aframe-inspector-original-camera=""></a-camera>
+            <a-entity id="camera" position="-0.19973 5.84567 10.35869">
+                <a-camera camera="" cursor="rayOrigin:mouse" position="-0.03489791849969297 3.3 -3.8346959559389853" rotation="-15.240677350479908 -14.209353319244403 0" look-controls="" wasd-controls="acceleration:100" data-aframe-inspector-original-camera="" raycaster="useWorldCoordinates:true;origin:-0.030410441560483246 9.145669999999999 6.147581873763059;direction:0.12617277419239273 -0.2720004049136409 -0.9539896282347156"></a-camera>
             </a-entity>
 
 
@@ -82,14 +81,23 @@
             <a-light type="point" color="#00c6c6" position="0 150.567 -44.56436" intensity="0.5" light="color:#006a6a;castShadow:true;shadowMapHeight:2048;shadowMapWidth:2048">
             </a-light>
 
-            <a-light id="spotlight1" type="spot" color="#ff0000" angle="2.5" position="54.14499 58 76.55971" rotation="-28.014771392921602 33.03674646724327 1.721165216572993" intensity="0.0" scale="" light="angle:2;castShadow:true;shadowMapHeight:1024;shadowMapWidth:1024">
+            <a-light id="spotlight1" type="spot" color="blue" angle="1.5" position="-48.481 58.000 80.578" rotation="-28.161 -27.852 -2.172" intensity="0.0" scale="" light="angle:2;castShadow:true;shadowMapHeight:1024;shadowMapWidth:1024">
             </a-light>
-            <a-entity id="spotlight1Beam" position="25.98727 30.63569 32.18836" geometry="primitive:cylinder" scale="4 120 4" material="visible:false;emissive:#ff0000;opacity:0.2" rotation="61.52821874571372 38.684391453847795 4.49542686059644"></a-entity>
+            <a-entity id="spotlight1Beam" position="-28.527 31.371 33.194" geometry="primitive:cylinder" scale="3.000 123.340 3.000" material="visible:false;emissive:blue;opacity:0.2" rotation="61.528 -28.881 4.495"></a-entity>
 
-            <a-light id="spotlight2" type="spot" color="#green" angle="3" position="-48.48149 58 80.57806" rotation="-29.03463626825447 -31.374022945773614 -1.6432429564352014" intensity="0.1" scale="" light="color:#ffff80;angle:4.45;castShadow:true;shadowMapHeight:1024;shadowMapWidth:1024">
+            <a-light id="spotlight2" type="spot" color="#ff0000" angle="2.5" position="7.82295 58 76.55971" rotation="-31.562 5.563 1.441" intensity="0.0" scale="" light="color:#00ff00;angle:2;castShadow:true;shadowMapHeight:1024;shadowMapWidth:1024">
+            </a-light>
+            <a-entity id="spotlight2Beam" position="-0.058 26.631 35.784" geometry="primitive:cylinder" scale="3 120 3" material="visible:false;emissive:#00ff00;opacity:0.2" rotation="-52.160 126.573 -133.533"></a-entity>
+
+            <a-light id="spotlight3" type="spot" color="#ff0000" angle="2.5" position="54.14499 58 76.55971" rotation="-28.014771392921602 33.03674646724327 1.721165216572993" intensity="0.0" scale="" light="angle:2;castShadow:true;shadowMapHeight:1024;shadowMapWidth:1024">
+            </a-light>
+            <a-entity id="spotlight3Beam" position="25.98727 30.63569 32.18836" geometry="primitive:cylinder" scale="4 120 4" material="visible:false;emissive:#ff0000;opacity:0.2" rotation="61.52821874571372 38.684391453847795 4.49542686059644"></a-entity>
+
+
+            <a-light id="fillSpotlight1" type="spot" color="#green" angle="3" position="-48.48149 58 80.57806" rotation="-29.03463626825447 -31.374022945773614 -1.6432429564352014" intensity="0.1" scale="" light="color:#ffff80;angle:4.45;castShadow:true;shadowMapHeight:1024;shadowMapWidth:1024">
             </a-light>
 
-            <a-light id="spotlight3" type="spot" color="#green" angle="3" position="58.8153 58 69.46141" rotation="-29.03463626825447 37.8908449075916 -1.6432429564352011" intensity="0.1" scale="" light="color:#ffff80;angle:4.45;castShadow:true;shadowMapHeight:1024;shadowMapWidth:1024">
+            <a-light id="fillSpotlight2" type="spot" color="#green" angle="3" position="58.8153 58 69.46141" rotation="-29.03463626825447 37.8908449075916 -1.6432429564352011" intensity="0.1" scale="" light="color:#ffff80;angle:4.45;castShadow:true;shadowMapHeight:1024;shadowMapWidth:1024">
             </a-light>
  
             <!--    ENVIRONMENT ENTITIES     -->

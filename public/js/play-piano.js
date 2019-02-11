@@ -13,16 +13,16 @@ AFRAME.registerComponent('play-piano', {
     },
     playPianoLoop : function() {
         const Context_AF = this;
-        let light = document.querySelector('#spotlight1');
-        let lightBeam = document.querySelector('#spotlight1Beam');
+        let light = document.querySelector('#spotlight3');
+        let lightBeam = document.querySelector('#spotlight3Beam');
         let scene = document.querySelector('a-scene');
         
         if(Context_AF.el.loadPianist  == false)
         {
             pianist = document.createElement('a-entity');
             pianist.setAttribute('obj-model', {obj:'/assets/models/pianist.obj'});
-            pianist.setAttribute('position', {x:0.5, y:6.5, z:-5.8});
-            pianist.setAttribute('rotation', {x:0, y:-90, z:0});
+            pianist.setAttribute('position', {x:5.358, y:6.500, z:-3.631});
+            pianist.setAttribute('rotation', {x:0, y:-117.080, z:0});
             pianist.setAttribute('id', 'pianist');
             scene.appendChild(pianist);  
             Context_AF.el.loadPianist  = true;
@@ -37,7 +37,7 @@ AFRAME.registerComponent('play-piano', {
             Context_AF.el.isDown = 1;
             Context_AF.el.object3D.position.set(0, 8.13, 0);
             Context_AF.el.setAttribute('material', {color: 'green'});
-            pianist.object3D.position.set(0.5, 6.5, -5.8);
+            pianist.object3D.position.set(5.358, 6.500, -3.631);
         }
         else{
             light.setAttribute('light', 'intensity', '0.0');

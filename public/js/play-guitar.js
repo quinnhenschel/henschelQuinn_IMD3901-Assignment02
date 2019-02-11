@@ -21,8 +21,8 @@ AFRAME.registerComponent('play-guitar', {
         {
             guitarist = document.createElement('a-entity');
             guitarist.setAttribute('obj-model', {obj:'/assets/models/guitarist.obj'});
-            guitarist.setAttribute('position', {x:0.5, y:6.5, z:-5.8});
-            guitarist.setAttribute('rotation', {x:0, y:-90, z:0});
+            guitarist.setAttribute('position', {x:-3.773, y:6.500, z:-2.778});
+            guitarist.setAttribute('rotation', {x:0, y:-69.471, z:0});
             guitarist.setAttribute('id', 'guitarist');
             scene.appendChild(guitarist);  
             Context_AF.el.loadGuitarist = true;
@@ -37,7 +37,7 @@ AFRAME.registerComponent('play-guitar', {
             Context_AF.el.isDown = 1;
             Context_AF.el.object3D.position.set(0, 8.13, 0);
             Context_AF.el.setAttribute('material', {color: 'green'});
-            guitarist.object3D.position.set(0.5, 6.5, -5.8);
+            guitarist.object3D.position.set(-3.773, 6.500, -2.778);
         }
         else{
             light.setAttribute('light', 'intensity', '0.0');

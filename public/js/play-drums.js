@@ -13,8 +13,8 @@ AFRAME.registerComponent('play-drums', {
     },
     playDrumLoop : function() {
         const Context_AF = this;
-        let light = document.querySelector('#spotlight1');
-        let lightBeam = document.querySelector('#spotlight1Beam');
+        let light = document.querySelector('#spotlight2');
+        let lightBeam = document.querySelector('#spotlight2Beam');
         let scene = document.querySelector('a-scene');
         
         if(Context_AF.el.loadDrummer  == false)
@@ -38,7 +38,6 @@ AFRAME.registerComponent('play-drums', {
             Context_AF.el.object3D.position.set(0, 8.13, 0);
             Context_AF.el.setAttribute('material', {color: 'green'});
             drummer.object3D.position.set(0.5, 6.5, -5.8);
-            
         }
         else{
             light.setAttribute('light', 'intensity', '0.0');
@@ -48,7 +47,6 @@ AFRAME.registerComponent('play-drums', {
             Context_AF.el.object3D.position.set(Context_AF.el.ogPosition.x, Context_AF.el.ogPosition.y, Context_AF.el.ogPosition.z);
             Context_AF.el.setAttribute('material', {color: 'red'});
             drummer.object3D.position.set(0, 0, 0);
-            
 
             //THIS DELETES THE ELEMENT AND MAKES IT LOAD IN A NEW ONE EVERY TIME. I PUT THIS IN HERE TO SHOW I CAN DO IT BUT I DONT WANT TO LOAD A NEW ONE EVERY TIME WHEN I CAN JUST HIDE THE EXISTING ENTITY
             //drummer.parentNode.removeChild(drummer);
